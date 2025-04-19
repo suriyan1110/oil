@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VT Oil - Hair Oil Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #f59e0b;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h2 {
+      color: #92400e;
+    }
+    .product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product input[type='number'] {
+      width: 50px;
+    }
+    .btn {
+      background-color: #16a34a;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #15803d;
+    }
+    .contact {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .contact a.whatsapp {
+      background-color: #22c55e;
+    }
+    .contact a.sms {
+      background-color: #f97316;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VT Oil</h1>
+    <p>Natural Hair Oil for Healthy Hair</p>
+  </header>
+  <div class="container">
+    <h2>Place Your Order</h2>
+    <div class="product">
+      <div>
+        <strong>30ml Hair Oil</strong><br>
+        Price: ₹100
+      </div>
+      <input type="number" min="1" value="1" id="qty" />
+      <button class="btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div id="cart"></div>
+
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <a class="whatsapp" href="https://wa.me/91876543210?text=I'm%20interested%20in%20ordering%20VT%20Oil" target="_blank">WhatsApp</a>
+      <a class="sms" href="sms:876543210?body=I'm%20interested%20in%20VT%20Oil">Send SMS</a>
+      <a href="mailto:ksdhg@kjshd.com?subject=Order%20Request&body=I%20want%20to%20order%20VT%20Oil">Email Us</a>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      const qty = document.getElementById("qty").value;
+      const cartDiv = document.getElementById("cart");
+      cartDiv.innerHTML = `<p><strong>Cart:</strong> ${qty} x 30ml Hair Oil = ₹${qty * 100}</p>`;
+    }
+  </script>
+</body>
+</html>
